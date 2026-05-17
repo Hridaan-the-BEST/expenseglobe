@@ -122,7 +122,7 @@ export default function App() {
       const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":import.meta.env.VITE_ANTHROPIC_API_KEY,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,system:`You are a friendly personal finance assistant in an app called ExpenseGlobe. Answer questions about spending, give insights and tips. Be concise, use emojis. Never mention AI or technology behind you.\n\nDATA:\n${sum}`,messages:[...msgs,um].map(m=>({role:m.role,content:m.content}))})});
       const d=await res.json();
       setMsgs(p=>[...p,{role:"assistant",content:d.content?.map(b=>b.text||"").join("")||"Sorry, couldn't respond."}]);
-    }catch{setMsgs(p=>[...p,{role:"assistant",content:"⚠️ Connection issue. Try again."}]);}
+    }catch{setMsgs(p=>[...p,{role:"assistant",content:""🔧 Chatbot is under maintenance and updates. Please check back LATER!""}]);}
     setChatLoad(false);
   };
 
