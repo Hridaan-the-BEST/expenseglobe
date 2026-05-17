@@ -114,7 +114,10 @@ export default function App() {
   };
   const startEdit=e=>{setForm({amount:e.amount,category:e.category,desc:e.desc,date:e.date,currency:e.currency});setEditId(e.id);setView("add");};
 
-  const sendChat=async()=>{
+ const sendChat=async()=>{
+    setMsgs(p=>[...p,{role:"user",content:chatIn},{role:"assistant",content:"🔧 Chatbot is under maintenance and updates. Please check back soon!"}]);
+    setChatIn("");
+  };
     const q=chatIn.trim();if(!q||chatLoad)return;
     const um={role:"user",content:q};setMsgs(p=>[...p,um]);setChatIn("");setChatLoad(true);
     const sum=`Expenses: ${expenses.map(e=>`${e.desc||e.category}: ${e.currency} ${e.amount} [${e.category}] ${e.date}`).join("; ")}. Total ${currency.code}: ${sym}${total.toFixed(2)}. This month: ${sym}${monthTotal.toFixed(2)}.`;
