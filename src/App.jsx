@@ -31,6 +31,7 @@ const fmtDate=d=>new Date(d).toLocaleDateString("en-US",{month:"short",day:"nume
 const fmtDay=d=>new Date(d).toLocaleDateString("en-US",{weekday:"short"});
 const getCat=n=>CATEGORIES.find(c=>c.name===n)||CATEGORIES[6];
 const prevMonthStr=m=>{const[y,mo]=m.split("-").map(Number);const d=new Date(y,mo-2,1);return d.toISOString().slice(0,7);};
+const mkSample=()=>[];
 
 
 
