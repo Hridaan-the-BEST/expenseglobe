@@ -30,18 +30,9 @@ const fmtDate=d=>new Date(d).toLocaleDateString("en-US",{month:"short",day:"nume
 const fmtDay=d=>new Date(d).toLocaleDateString("en-US",{weekday:"short"});
 const getCat=n=>CATEGORIES.find(c=>c.name===n)||CATEGORIES[6];
 const prevMonthStr=m=>{const[y,mo]=m.split("-").map(Number);const d=new Date(y,mo-2,1);return d.toISOString().slice(0,7);};
+const mkSample=()=>[];
 
-const mkSample=()=>{
-  const pm=prevMonthStr(curMonth());
-  return[
-    {id:1,amount:12.5,category:"Food",desc:"Lunch",date:today(),currency:"USD"},
-    {id:2,amount:45,category:"Transport",desc:"Taxi",date:today(),currency:"USD"},
-    {id:3,amount:200,category:"Shopping",desc:"Clothes",date:today(),currency:"USD"},
-    {id:4,amount:85,category:"Food",desc:"Groceries",date:`${pm}-10`,currency:"USD"},
-    {id:5,amount:1200,category:"Housing",desc:"Rent",date:`${pm}-01`,currency:"USD"},
-    {id:6,amount:60,category:"Entertainment",desc:"Cinema",date:`${pm}-15`,currency:"USD"},
-  ];
-};
+
 
 export default function App() {
   const [dark,setDark]=useState(true);
