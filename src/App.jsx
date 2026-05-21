@@ -709,11 +709,18 @@ export default function App() {
       </div>
      
     </div>
-
-      <div style={{position:"fixed",bottom:0,left:0,right:0,textAlign:"center",padding:"6px",fontSize:10,color:sub,fontWeight:700,letterSpacing:0.5,background:dark?"rgba(10,10,15,0.95)":"rgba(244,244,255,0.95)",backdropFilter:"blur(10px)",borderTop:`1px solid ${border}`,zIndex:100}}>
-       Check out our cool 2D shooter game:https | //melodious-panda-e0aa3a.netlify.app/ or https://tourmaline-pie-dd0ea3.netlify.app/
+      
+{/* Main Footer */}
+      <div style={{position:"fixed",bottom:0,left:0,right:0,textAlign:"center",padding:"10px",fontSize:11,color:sub,background:"rgba(10,10,15,0.95)",borderTop:`1px solid ${border}`,zIndex:100}}>
+        made with ☕ in Dehradun • v0.9
       </div>
 
+      {/* Game Promotion */}
+      <div style={{position:"fixed",bottom:38,left:0,right:0,textAlign:"center",padding:"8px 10px",fontSize:10,color:"#A0A0C0",background:"rgba(10,10,15,0.9)",zIndex:99}}>
+        Check out my 2D shooter games: 
+        <a href="https://melodious-panda-e0aa3a.netlify.app" target="_blank" rel="noopener noreferrer" style={{color:"#7B9EFF", margin:"0 6px", textDecoration:"underline"}}>Game 1</a> | 
+        <a href="https://tourmaline-pie-dd0ea3.netlify.app" target="_blank" rel="noopener noreferrer" style={{color:"#7B9EFF", margin:"0 6px", textDecoration:"underline"}}>Game 2</a>
+      </div>
     </div>
   );
 }
