@@ -265,7 +265,7 @@ export default function App() {
 
               {/* Recent */}
               <div style={{...cardStyle,padding:"24px"}}>
-                <div style={{fontWeight:700,fontSize:16,marginBottom:16}}>Recent Expenses <span style={{fontSize:13,fontWeight:400,color:sub}}>(don't forget the chai ☕)</span></div>
+                <div style={{fontWeight:700,fontSize:16,marginBottom:16}}>Recent Expenses <span style={{fontSize:13,fontWeight:400,color:sub}}>(Don't forget the Chai ☕)</span></div>
                 {expenses.length===0 ? (
                   <div style={{textAlign:"center",color:sub,padding:"30px 0"}}>No expenses yet. Add your first one!</div>
                 ) : (
@@ -331,7 +331,7 @@ export default function App() {
 
       {/* Footer */}
       <div style={{textAlign:"center",padding:"24px 20px",fontSize:11,color:sub,background:dark?"rgba(10,10,15,0.95)":"rgba(249,247,255,0.95)",borderTop:`1px solid ${border}`}}>
-        made with too much coffee in Dehradun • not perfect but real
+        Made with too much tea & coffee in India • Not perfect but real
       </div>
 
       {/* Keep all your modals, chat, and FABs from the original code. They will work fine with the new colors. */}
