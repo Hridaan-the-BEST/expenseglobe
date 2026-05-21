@@ -174,8 +174,8 @@ export default function App() {
             <div style={{display:"flex",alignItems:"center",gap:14}}>
               <div style={{width:50,height:50,borderRadius:18,background:MAIN,display:"flex",alignItems:"center",justifyContent:"center",fontSize:29,boxShadow:"0 6px 25px rgba(109,40,217,0.45)",animation:"glow 4s infinite"}}>💸</div>
               <div>
-                <div style={{fontSize:29,fontWeight:800,letterSpacing:"-1.8px"}}>spendsmart</div>
-                <div style={{fontSize:12,color:sub,marginTop:-4}}>built in dehradun • v0.9</div>
+                <div style={{fontSize:29,fontWeight:800,letterSpacing:"-1.8px"}}>SpendSmart</div>
+                <div style={{fontSize:12,color:sub,marginTop:-4}}>Built in India • v0.9</div>
               </div>
             </div>
 
@@ -332,6 +332,11 @@ export default function App() {
       {/* Footer */}
       <div style={{textAlign:"center",padding:"24px 20px",fontSize:11,color:sub,background:dark?"rgba(10,10,15,0.95)":"rgba(249,247,255,0.95)",borderTop:`1px solid ${border}`}}>
         Made with too much tea & coffee in India • Not perfect but real
+      </div>
+
+
+<div style={{textAlign:"center",padding:"24px 20px",fontSize:11,color:sub,background:dark?"rgba(10,10,15,0.95)":"rgba(249,247,255,0.95)",borderTop:`1px solid ${border}`}}>
+        Made by RANCE.co.ai • All rights reserved.
       </div>
 
       {/* Keep all your modals, chat, and FABs from the original code. They will work fine with the new colors. */}
