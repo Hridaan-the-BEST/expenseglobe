@@ -1,4 +1,3 @@
-
 import { useState, useMemo, useRef, useEffect } from "react";
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, Area, AreaChart } from "recharts";
 
@@ -85,7 +84,7 @@ export default function App() {
   const [expenses,setExpenses]=useState(()=>{try{return JSON.parse(localStorage.getItem("ss_expenses")||"[]");}catch{return[];}});
   const [currency,setCurrency]=useState(()=>CURRENCIES.find(c=>c.code===(localStorage.getItem("ss_currency")||"USD"))||CURRENCIES[0]);
   const [budgets,setBudgets]=useState(()=>{try{return JSON.parse(localStorage.getItem("ss_budgets")||"null")||{Food:0,Transport:0,Housing:0,Health:0,Entertainment:0,Shopping:0,Others:0};}catch{return{Food:0,Transport:0,Housing:0,Health:0,Entertainment:0,Shopping:0,Others:0};}});
-  const [dark,setDark]=useState(()=>{try{return JSON.parse(localStorage.getItem("ss_dark")||"true");}catch{return true;}});
+  const dark=true;
   const [view,setView]=useState("dashboard");
   const [timeView,setTimeView]=useState("weekly");
   const [form,setForm]=useState({amount:"",category:"Food",desc:"",date:today(),currency:"USD"});
@@ -107,7 +106,7 @@ export default function App() {
   useEffect(()=>localStorage.setItem("ss_expenses",JSON.stringify(expenses)),[expenses]);
   useEffect(()=>localStorage.setItem("ss_currency",currency.code),[currency]);
   useEffect(()=>localStorage.setItem("ss_budgets",JSON.stringify(budgets)),[budgets]);
-  useEffect(()=>localStorage.setItem("ss_dark",JSON.stringify(dark)),[dark]);
+
   useEffect(()=>localStorage.setItem("ss_goals",JSON.stringify(goals)),[goals]);
   useEffect(()=>{fetch("https://api.exchangerate-api.com/v4/latest/USD").then(r=>r.json()).then(d=>{if(d.rates)setRates(d.rates);}).catch(()=>{});},[]);
   useEffect(()=>{chatEnd.current?.scrollIntoView({behavior:"smooth"});},[msgs]);
@@ -164,14 +163,14 @@ export default function App() {
   };
 
   // Colors
-  const bg=dark?"#0A0A0F":"#F4F4FF";
-  const card=dark?"rgba(255,255,255,0.04)":"rgba(255,255,255,0.95)";
-  const solid=dark?"#12121A":"#FFFFFF";
-  const border=dark?"rgba(255,255,255,0.07)":"rgba(0,0,0,0.07)";
-  const txt=dark?"#F0F0FF":"#0A0A1A";
-  const sub=dark?"#666680":"#8888AA";
-  const ibg=dark?"rgba(255,255,255,0.05)":"#F8F8FF";
-  const ibr=dark?"rgba(255,255,255,0.09)":"rgba(0,0,0,0.1)";
+  const bg="#08080F";
+  const card="rgba(123,47,255,0.08)";
+  const solid="#0E0E1A";
+  const border="rgba(123,47,255,0.2)";
+  const txt="#F0F0FF";
+  const sub="#9090BB";
+  const ibg="rgba(30,144,255,0.07)";
+  const ibr="rgba(30,144,255,0.2)";
 
   const MAIN="linear-gradient(135deg,#7B2FFF 0%,#E0115F 100%)";
   const MAIN2="linear-gradient(135deg,#1E90FF 0%,#7B2FFF 100%)";
@@ -631,8 +630,12 @@ export default function App() {
 
       {/* Footer */}
       <div style={{position:"fixed",bottom:0,left:0,right:0,textAlign:"center",padding:"6px",fontSize:10,color:sub,fontWeight:700,letterSpacing:0.5,background:dark?"rgba(10,10,15,0.95)":"rgba(244,244,255,0.95)",backdropFilter:"blur(10px)",borderTop:`1px solid ${border}`,zIndex:100}}>
-        -SPEND_SMART- · CREATED BY RANCE.co.ai · ALL RIGHTS RESERVED.
+        --SPEND_SMART-- · CREATED BY RANCE.co.ai · ALL RIGHTS RESERVED
       </div>
+ <div style={{position:"fixed",bottom:0,left:0,right:0,textAlign:"center",padding:"6px",fontSize:10,color:sub,fontWeight:700,letterSpacing:0.5,background:dark?"rgba(10,10,15,0.95)":"rgba(244,244,255,0.95)",backdropFilter:"blur(10px)",borderTop:`1px solid ${border}`,zIndex:100}}>
+       Check out our cool 2D shooter game:https | //melodious-panda-e0aa3a.netlify.app/ or https://tourmaline-pie-dd0ea3.netlify.app/
+      </div>
+
     </div>
   );
-}ss
+}
