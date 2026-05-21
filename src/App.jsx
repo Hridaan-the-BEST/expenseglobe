@@ -162,24 +162,23 @@ export default function App() {
     setChatIn("");
   };
 
-  // Colors
-  const bg="#08080F";
-  const card="rgba(123,47,255,0.08)";
-  const solid="#0E0E1A";
-  const border="rgba(123,47,255,0.2)";
-  const txt="#F0F0FF";
-  const sub="#9090BB";
-  const ibg="rgba(30,144,255,0.07)";
-  const ibr="rgba(30,144,255,0.2)";
+    // === HUMANIZED COLORS ===
+  const bg = "#0A0A0F";
+  const card = "rgba(255,255,255,0.07)";
+  const solid = "#12121A";
+  const border = "rgba(255,255,255,0.1)";
+  const txt = "#F0F0FF";
+  const sub = "#A0A0C0";
+  const ibg = "rgba(255,255,255,0.06)";
+  const ibr = "rgba(255,255,255,0.15)";
 
-  const MAIN="linear-gradient(135deg,#7B2FFF 0%,#E0115F 100%)";
-  const MAIN2="linear-gradient(135deg,#1E90FF 0%,#7B2FFF 100%)";
-  const MAIN3="linear-gradient(135deg,#E0115F 0%,#FF4757 100%)";
+  const MAIN = "linear-gradient(135deg,#6D28D9 0%,#DB2777 100%)";
+  const MAIN2 = "linear-gradient(135deg,#3B82F6 0%,#8B5CF6 100%)";
+  const MAIN3 = "linear-gradient(135deg,#E0115F 0%,#FF4757 100%)";
 
-  const cardStyle={background:card,backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderRadius:22,border:`1px solid ${border}`,boxShadow:dark?"0 8px 32px rgba(0,0,0,0.45)":"0 8px 32px rgba(0,0,0,0.07)"};
-  const inpStyle={width:"100%",boxSizing:"border-box",padding:"13px 16px",borderRadius:14,border:`1.5px solid ${ibr}`,fontSize:14,background:ibg,color:txt,outline:"none",fontFamily:"inherit"};
-  const lbl={fontSize:10,fontWeight:800,color:sub,textTransform:"uppercase",letterSpacing:1.2,display:"block",marginBottom:8};
-
+  const cardStyle = {background:card,backdropFilter:"blur(24px)",WebkitBackdropFilter:"blur(24px)",borderRadius:24,border:`1px solid ${border}`,boxShadow:"0 10px 40px rgba(0,0,0,0.5)"};
+  const inpStyle = {width:"100%",boxSizing:"border-box",padding:"14px 16px",borderRadius:16,border:`1.5px solid ${ibr}`,fontSize:15,background:ibg,color:txt,outline:"none",fontFamily:"inherit"};
+  const lbl = {fontSize:11,fontWeight:700,color:sub,textTransform:"uppercase",letterSpacing:0.8,display:"block",marginBottom:8};
   const BudgetBar=({name,icon,color})=>{
     const spent=catSpent(name),limit=budgets[name];
     if(!limit)return null;
@@ -221,22 +220,22 @@ export default function App() {
       </div>
 
       <div style={{position:"relative",zIndex:1}}>
-        {/* Header */}
-        <div style={{padding:"20px 20px 70px",background:dark?"linear-gradient(180deg,rgba(123,47,255,0.1) 0%,transparent 100%)":"linear-gradient(180deg,rgba(123,47,255,0.05) 0%,transparent 100%)"}}>
+                {/* Header - More Human */}
+        <div style={{padding:"24px 20px 68px",background:dark?"linear-gradient(180deg,rgba(109,40,217,0.12) 0%,transparent 100%)":"linear-gradient(180deg,rgba(109,40,217,0.06) 0%,transparent 100%)"}}>
           <div style={{maxWidth:700,margin:"0 auto",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-            <div style={{display:"flex",alignItems:"center",gap:12}}>
-              <div style={{width:44,height:44,borderRadius:15,background:MAIN,display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,boxShadow:"0 4px 20px rgba(123,47,255,0.5)",animation:"glow 3s infinite"}}>💰</div>
+            <div style={{display:"flex",alignItems:"center",gap:14}}>
+              <div style={{width:48,height:48,borderRadius:18,background:MAIN,display:"flex",alignItems:"center",justifyContent:"center",fontSize:28,boxShadow:"0 6px 25px rgba(109,40,217,0.45)"}}>💸</div>
               <div>
-                <div style={{fontSize:20,fontWeight:900,letterSpacing:"-1px",background:MAIN,WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>SpendSmart</div>
-                <div style={{fontSize:10,color:sub,fontWeight:600,letterSpacing:0.5}}>by RANCE.co.ai</div>
+                <div style={{fontSize:27,fontWeight:800,letterSpacing:"-1.4px"}}>spendsmart</div>
+                <div style={{fontSize:12,color:sub,marginTop:-2}}>a tiny tracker i actually use</div>
               </div>
             </div>
             <div style={{display:"flex",gap:8,alignItems:"center"}}>
               <select value={currency.code} onChange={e=>setCurrency(CURRENCIES.find(c=>c.code===e.target.value))}
-                style={{background:ibg,border:`1px solid ${ibr}`,color:txt,borderRadius:12,padding:"8px 10px",fontSize:12,cursor:"pointer",fontFamily:"inherit",outline:"none",fontWeight:600}}>
+                style={{background:ibg,border:`1px solid ${ibr}`,color:txt,borderRadius:12,padding:"8px 12px",fontSize:13,cursor:"pointer",fontFamily:"inherit",outline:"none"}}>
                 {CURRENCIES.map(c=><option key={c.code} value={c.code}>{c.code} {c.symbol}</option>)}
               </select>
-              <button onClick={()=>setDark(x=>!x)} style={{width:38,height:38,borderRadius:12,border:`1px solid ${ibr}`,background:ibg,cursor:"pointer",fontSize:16,display:"flex",alignItems:"center",justifyContent:"center"}}>{dark?"☀️":"🌙"}</button>
+              <button onClick={()=>setDark(x=>!x)} style={{width:40,height:40,borderRadius:12,border:`1px solid ${ibr}`,background:ibg,cursor:"pointer",fontSize:18,display:"flex",alignItems:"center",justifyContent:"center"}}>{dark?"☀️":"🌙"}</button>
             </div>
           </div>
         </div>
