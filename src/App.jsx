@@ -630,7 +630,7 @@ export default function App() {
 
       {/* Footer */}
       <div style={{position:"fixed",bottom:0,left:0,right:0,textAlign:"center",padding:"6px",fontSize:10,color:sub,fontWeight:700,letterSpacing:0.5,background:dark?"rgba(10,10,15,0.95)":"rgba(244,244,255,0.95)",backdropFilter:"blur(10px)",borderTop:`1px solid ${border}`,zIndex:100}}>
-        SPENDSMART · CREATED BY RANCE.CO.AI · ALL RIGHTS RESERVED
+        -SPEND_SMART- · CREATED BY RANCE.co.ai · ALL RIGHTS RESERVED.
       </div>
     </div>
   );
