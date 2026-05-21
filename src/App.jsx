@@ -201,6 +201,15 @@ export default function App() {
   return(
     <div style={{fontFamily:"'Inter','Segoe UI',sans-serif",minHeight:"100vh",background:bg,color:txt,transition:"all 0.3s"}}>
       <style>{`
+        @keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-35px) rotate(8deg); }
+}
+
+@keyframes floatTip {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+  50% { transform: translateY(-60px) scale(1.05); opacity: 0.85; }
+}
         @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
         @keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
         @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -219,15 +228,82 @@ export default function App() {
         <div style={{position:"absolute",bottom:-100,left:"40%",width:350,height:350,borderRadius:"50%",background:"radial-gradient(circle,rgba(30,144,255,0.1) 0%,transparent 70%)"}}/>
       </div>
 
-      <div style={{position:"relative",zIndex:1}}>
-                {/* Header - More Human */}
+            <div style={{position:"relative",zIndex:1}}>
+
+        {/* === NEW: Floating Doodles & Tips === */}
+        <div style={{
+          position: "fixed",
+          inset: 0,
+          pointerEvents: "none",
+          zIndex: 0,
+          overflow: "hidden"
+        }}>
+          {/* Floating Doodles */}
+          {[
+            {emoji: "💰", left: "8%", top: "20%", delay: "0s", size: "28px"},
+            {emoji: "📊", left: "85%", top: "35%", delay: "1.2s", size: "26px"},
+            {emoji: "☕", left: "15%", top: "65%", delay: "0.8s", size: "24px"},
+            {emoji: "🪙", left: "78%", top: "72%", delay: "2.1s", size: "30px"},
+            {emoji: "📈", left: "22%", top: "28%", delay: "3s", size: "22px"},
+            {emoji: "🍵", left: "88%", top: "18%", delay: "1.5s", size: "26px"},
+          ].map((item, i) => (
+            <div
+              key={i}
+              style={{
+                position: "absolute",
+                left: item.left,
+                top: item.top,
+                fontSize: item.size,
+                opacity: 0.12,
+                animation: `float 18s infinite ease-in-out ${item.delay}`,
+                zIndex: 0,
+              }}
+            >
+              {item.emoji}
+            </div>
+          ))}
+
+          {/* Floating Finance Tips */}
+          {[
+            {text: "Track every ₹20", left: "12%", top: "45%", delay: "4s"},
+            {text: "50/30/20 works", left: "82%", top: "52%", delay: "7s"},
+            {text: "Chai > Latte", left: "18%", top: "78%", delay: "2.5s"},
+            {text: "Review weekly", left: "75%", top: "25%", delay: "5.5s"},
+          ].map((tip, i) => (
+            <div
+              key={i}
+              style={{
+                position: "absolute",
+                left: tip.left,
+                top: tip.top,
+                fontSize: "11px",
+                color: "#A0A0C0",
+                background: "rgba(255,255,255,0.05)",
+                padding: "4px 10px",
+                borderRadius: "20px",
+                border: "1px solid rgba(255,255,255,0.1)",
+                whiteSpace: "nowrap",
+                opacity: 0.6,
+                animation: `floatTip 25s infinite ease-in-out ${tip.delay}`,
+                zIndex: 0,
+              }}
+            >
+              {tip.text}
+            </div>
+          ))}
+        </div>
+
+        {/* Your existing content */}
+        {/* Header, Hero, Nav, etc. */}
+                
+               {/* Header - More Human */}
         <div style={{padding:"24px 20px 68px",background:dark?"linear-gradient(180deg,rgba(109,40,217,0.12) 0%,transparent 100%)":"linear-gradient(180deg,rgba(109,40,217,0.06) 0%,transparent 100%)"}}>
           <div style={{maxWidth:700,margin:"0 auto",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
             <div style={{display:"flex",alignItems:"center",gap:14}}>
               <div style={{width:48,height:48,borderRadius:18,background:MAIN,display:"flex",alignItems:"center",justifyContent:"center",fontSize:28,boxShadow:"0 6px 25px rgba(109,40,217,0.45)"}}>💸</div>
               <div>
-                <div style={{fontSize:27,fontWeight:800,letterSpacing:"-1.4px"}}>spendsmart</div>
-                <div style={{fontSize:12,color:sub,marginTop:-2}}>a tiny tracker i actually use</div>
+                <div style={{fontSize:27,fontWeight:800,letterSpacing:"-1.4px"}}>SpendSmart</div>
+                <div style={{fontSize:12,color:sub,marginTop:-2}}> Created by Hridaan Uniyal -- RANCE.co.ai __ A tiny tracker I actually use</div>
               </div>
             </div>
             <div style={{display:"flex",gap:8,alignItems:"center"}}>
@@ -629,7 +705,7 @@ export default function App() {
 
       {/* Footer */}
       <div style={{position:"fixed",bottom:0,left:0,right:0,textAlign:"center",padding:"6px",fontSize:10,color:sub,fontWeight:700,letterSpacing:0.5,background:dark?"rgba(10,10,15,0.95)":"rgba(244,244,255,0.95)",backdropFilter:"blur(10px)",borderTop:`1px solid ${border}`,zIndex:100}}>
-        --SPEND_SMART-- · CREATED BY RANCE.co.ai · ALL RIGHTS RESERVED
+        --SPEND_SMART-- · CREATED BY RANCE.co.ai · ALL RIGHTS RESERVED  -__--_--__- Made with too much Tea and Coffee in India.
       </div>
  <div style={{position:"fixed",bottom:0,left:0,right:0,textAlign:"center",padding:"6px",fontSize:10,color:sub,fontWeight:700,letterSpacing:0.5,background:dark?"rgba(10,10,15,0.95)":"rgba(244,244,255,0.95)",backdropFilter:"blur(10px)",borderTop:`1px solid ${border}`,zIndex:100}}>
        Check out our cool 2D shooter game:https | //melodious-panda-e0aa3a.netlify.app/ or https://tourmaline-pie-dd0ea3.netlify.app/
