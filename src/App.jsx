@@ -705,7 +705,7 @@ export default function App() {
 
           {/* Main Footer */}
       <div style={{position:"fixed",bottom:0,left:0,right:0,textAlign:"center",padding:"12px",fontSize:11,color:sub,background:"rgba(10,10,15,0.95)",borderTop:`1px solid ${border}`,zIndex:100}}>
-        made with ☕ in Dehradun • v0.9
+        Made with ☕ in INDIA • v0.9
       </div>
 
       {/* Game Links */}
