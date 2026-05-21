@@ -704,10 +704,13 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      <div style={{position:"fixed",bottom:1,left:0,right:0,textAlign:"center",padding:"6px",fontSize:10,color:sub,fontWeight:700,letterSpacing:0.5,background:dark?"rgba(10,10,15,0.95)":"rgba(244,244,255,0.95)",backdropFilter:"blur(10px)",borderTop:`1px solid ${border}`,zIndex:100}}>
+     <div                     style={{position:"fixed",bottom:1,left:0,right:0,textAlign:"center",padding:"6px",fontSize:10,color:sub,fontWeight:700,letterSpacing:0.5,background:dark?"rgba(10,10,15,0.95)":"rgba(244,244,255,0.95)",backdropFilter:"blur(10px)",borderTop:`1px solid ${border}`,zIndex:100}}>
         --SPEND_SMART-- · CREATED BY RANCE.co.ai · ALL RIGHTS RESERVED  -__--_--__- Made with too much Tea and Coffee in India.
       </div>
- <div style={{position:"fixed",bottom:0,left:0,right:0,textAlign:"center",padding:"6px",fontSize:10,color:sub,fontWeight:700,letterSpacing:0.5,background:dark?"rgba(10,10,15,0.95)":"rgba(244,244,255,0.95)",backdropFilter:"blur(10px)",borderTop:`1px solid ${border}`,zIndex:100}}>
+     
+    </div>
+
+      <div style={{position:"fixed",bottom:0,left:0,right:0,textAlign:"center",padding:"6px",fontSize:10,color:sub,fontWeight:700,letterSpacing:0.5,background:dark?"rgba(10,10,15,0.95)":"rgba(244,244,255,0.95)",backdropFilter:"blur(10px)",borderTop:`1px solid ${border}`,zIndex:100}}>
        Check out our cool 2D shooter game:https | //melodious-panda-e0aa3a.netlify.app/ or https://tourmaline-pie-dd0ea3.netlify.app/
       </div>
 
