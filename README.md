@@ -1,4 +1,4 @@
-💰 SpendSmart - An Expense Tracker
+#💰 SpendSmart - An Expense Tracker
 A simple and beautiful personal expense tracker built with HTML, CSS & JavaScript.
 
 SpendSmart's
@@ -11,7 +11,7 @@ SpendSmart's
 -Data saved in browser (no backend needed)
 -Fully Responsive Design
 
-🚀 Live Demo:
+# 🚀 Live Demo:
 👉 View Live Website(First Version) - https://hridaan-the-best.github.io/SpendSmart
 
 🛠️ Tech Stack
@@ -30,9 +30,9 @@ All data is saved in your browser
 -Open index.html in any browser
 -Start tracking your expenses!
 
-# Made with 🧠 in InDIA
+@ Made with 🧠 in InDIA
 
-(Updated (better) version)
+## (Updated (better) version)
 
 React + Vite
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
