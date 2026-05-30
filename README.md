@@ -1,4 +1,4 @@
-#💰 SpendSmart - An Expense Tracker
+# SpendSmart - An Expense Tracker
 A simple and beautiful personal expense tracker built with HTML, CSS & JavaScript.
 
 SpendSmart's
